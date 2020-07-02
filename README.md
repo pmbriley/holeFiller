@@ -1,5 +1,7 @@
 # holeFiller
 
+Elizabeth B Liddle, Marjie Jansen, Paul M Briley
+
 Installation:
 
 Ensure the three HoleFiller functions are in your Matlab path (HoleDiagnostics, MultipleImputations_SPMest, CombiningEstimates)

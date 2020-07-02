@@ -3,12 +3,12 @@
 Elizabeth B Liddle, Marjie Jansen, Paul M Briley
 
 
-Installation:
+**Installation:
 
 Ensure the three HoleFiller functions are in your Matlab path (HoleDiagnostics, MultipleImputations_SPMest, CombiningEstimates)
 
 
-Diagnostics:
+**Diagnostics:
 
 Call HoleDiagnostics as a function
 
@@ -21,7 +21,7 @@ In which case you will end up with a variable called “DodgyFiles” that will 
 You will then be presented with a series of dialog boxes – follow the on-screen instructions.  The first will let you navigate to the folder containing your initial second-level analysis.
 
 
-Multiple Imputations:
+**Multiple Imputations:
 
 To impute missing data, again, you will need your original second-level analysis. It is best to run all the second-level contrasts you are interested in at this stage, as these will then also be output as part of the MI function.
 

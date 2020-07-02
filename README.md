@@ -23,7 +23,7 @@ You will then be presented with a series of dialog boxes – follow the on-scree
 
 **Multiple Imputations:
 
-To impute missing data, again, you will need your original second-level analysis. It is best to run all the second-level contrasts you are interested in at this stage, as these will then also be output as part of the MI function.
+To impute missing data, again, you will need your original second-level analysis. It is best to have already run all the second-level contrasts you are interested in, as these will then also be output as part of the multiple imputations function.
 
 Then type:
 

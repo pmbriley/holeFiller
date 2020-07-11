@@ -27,9 +27,11 @@ To impute missing data, again, you will need your original second-level analysis
 
 Then type:
 
-MultipleImputations_SPMest(OriginalDirectory,NewDirectoryName,Threshold,NumberImputations)
+MultipleImputations_SPMest(OriginalDirectory,Threshold,NumberImputations)
 
-where OriginalDirectory is the full path to your original second level analysis; NewDirectoryName is the name you want to give the MI analysis folder (it will prefix this name with the name of your original analysis folder); Threshold is either the maximum number or the maximum proportion of missing values you want to impute (if you enter a value >=1, the function will interpret this as a number of voxels (rounding if necessary), and if you enter a proportion of unity, it will interpret this as a  proportion of missing values); and NumberImputations  is the number of imputations you want to run (5 is standard).
+where OriginalDirectory is the full path to your original second level analysis; Threshold is either the maximum number or the maximum proportion of missing values you want to impute (if you enter a value >=1, the function will interpret this as a number of voxels (rounding if necessary), and if you enter a proportion of unity, it will interpret this as a  proportion of missing values); and NumberImputations is the number of imputations you want to run (5 is standard).
+
+The results of the MI analysis will be saved in a new folder (ImputationsDirectory) that is named as [OriginalDirectory '_imputed']
 
 For each imputation, the function will write a new first level con image (named ImpNo1_con0001.img etc) for the relevant contrast in each subject file, and run a new second level analysis on each subject, which will be stored in the ImputationsDirectory in a separate subdirectory (ImpNo1, ImpNo2 etc). 
 

@@ -1,12 +1,11 @@
-function MultipleImputations_SPMest(OriginalDirectory,NewDirectoryName,Threshold,NumberImputations)
+function MultipleImputations_SPMest(OriginalDirectory,Threshold,NumberImputations)
 % Run an initial 2nd level analysis on your subjects' con images. Then
 % enter the directory of this analysis
 %
 % USAGE:
-% MultipleImputations_SPMest(OriginalDirectory,ImputationsDirectory,ThresholdProp,NumberImputations)
+% MultipleImputations_SPMest(OriginalDirectory,Threshold,NumberImputations)
 %
 % OriginalDirectory = directory containing the original second level analysis
-% NewDirectoryName = name for the repaired analysis folder
 % Threshold = proportion of NaNs allowed per voxel (i.e. proportion of missing subjects allowed), typically use 0.15
 % NumberImputations = number of imputations (e.g. 5)
 %
@@ -14,7 +13,7 @@ function MultipleImputations_SPMest(OriginalDirectory,NewDirectoryName,Threshold
 
 spm('defaults','fmri');
 
-ImputationsDirectory = fullfile(OriginalDirectory,NewDirectoryName);
+ImputationsDirectory = [OriginalDirectory '_imputed'];
 mkdir(ImputationsDirectory);
 
 % load the SPM.mat file from the original 2nd level analysis
@@ -202,5 +201,5 @@ for iImputation = 1:NumberImputations
     end
 end % Imputation loop
 
-save([OriginalDirectory 'imputed\FilledHoles.mat'],'nFilledHoles','imputedVoxels');
+save(fullfile(ImputationsDirectory,'FilledHoles.mat'),'nFilledHoles','imputedVoxels');
 CombiningEstimates(ImputationsDirectory);

@@ -1,4 +1,18 @@
 function SmallMasks = HoleDiagnostics
+% SmallMasks = HoleDiagnostics()
+%
+% Citations:
+%
+% Briley PM, Liddle EB, Simmonite M, Jansen M, White TP, Balain V, Palaniyappan L, Bowtell R, Mullinger KJ & Liddle PF (2020)
+% Blood Oxygen Level-Dependent correlates of beta bursts in health and psychosis: a concurrent EEG-fMRI study
+% Biological Psychiatry: Cognitive Neuroscience and Neuroimaging. Published online ahead of print. doi: 10.1016/j.bpsc.2020.10.018
+%
+% Liddle EB, Bates AT, Das D, White TP, Groom MJ, Jansen M, et al. (2013)
+% Inefficient cerebral recruitment as a vulnerability marker for schizophrenia
+% Psychological Medicine 43:169–182. doi: 10.1017/S0033291712000992
+%
+% Usage:
+%
 % This function analyses the con images you entered into your second level
 % analysis for holes.  It draws a series of plots that will help you decide
 % on how to approach the problem of missing data, and creates and saves a 
@@ -7,14 +21,14 @@ function SmallMasks = HoleDiagnostics
 % If you want to output these as a variable, use the syntax
 % VarName=HoleDiagnostics; either way, it will display them in the command
 % window
-
+%
 % The first graphic to be output is an SPM display of a brain image
 % weighted voxel wise by the  proportion of subjects for whom data is
 % availabe for that voxel.  This  image can be surfed to explore the
 % brain regions where most good data is available
-
+%
 % The next is a plot with three graphs
-
+%
 % The top is a bar chart, with one bar for each of your subjects, plotted
 % in the order in which they were entered into your analysis.  The vertical
 % axis represents the number of voxels in each subject's con image as a
@@ -29,18 +43,18 @@ function SmallMasks = HoleDiagnostics
 % substantially more than one, it suggests that the missing values are well
 % distributed throughout the subjects, and that repairing the analysis for
 % these voxels may be worthwhile
-
+%
 % The middle plot is a raster plot in which the voxels are ranked along the
 % X axis according to the proportion of subjects for which there are data,
 % while on the Y axis, subjects are ranked by the number of voxels for
 % which there are data.  From this plot, it should be possible to evaluate
 % how evenly distributed the missing data is throughout the subjects
-
+%
 % The bottom plot is a sensitivity analysis, showing the potential increase
 % in mask size (increase in number of voxels used in the analysis) will
 % result from an increasing number of allowable NaNs for each voxel (i.e an
 % increasing number of missing data points for each voxel)
-
+%
 % The function then offers you the opportunity to see the effect of
 % allowing a given number of missing datapoints on the number of voxels
 % available for analysis.  The resulting images are shown in an SPM checkreg 
@@ -51,14 +65,14 @@ function SmallMasks = HoleDiagnostics
 % These images are in register and can therefore be surfed to check that
 % additional brain areas that will be included are likely to be within the
 % brain, and have sensible data
-
+%
 % Finally, you will be asked whether you want to see the filenames for any
 % subjects with concerningly small masks, as indicated on the bar chart.
 % If so, enter a vector of numbers from the bar chart
-
+%
 % When you run the function you will be prompted for the path to your
 % original second level analysis
-
+%
 % Original by Elizabeth Liddle and Marjie Jansen; modified by Paul Briley
 % on 22/3/2019
 
